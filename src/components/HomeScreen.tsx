@@ -11,7 +11,7 @@ export const HomeScreen = ({
       <div className="w-full max-w-sm space-y-8">
         {/* App Title */}
         <div className="text-center space-y-4">
-          <div className="mx-auto w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center shadow-[var(--shadow-soft)]">
+          <div className="mx-auto w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-[var(--shadow-soft)]">
             <Scan className="w-10 h-10 text-primary-foreground" />
           </div>
           <div>
