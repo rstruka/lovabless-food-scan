@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Camera, Scan } from "lucide-react";
-
 interface HomeScreenProps {
   onScanPress: () => void;
 }
-
-export const HomeScreen = ({ onScanPress }: HomeScreenProps) => {
-  return (
-    <div className="safe-area min-h-screen flex flex-col items-center justify-center p-6">
+export const HomeScreen = ({
+  onScanPress
+}: HomeScreenProps) => {
+  return <div className="safe-area min-h-screen flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-8">
         {/* App Title */}
         <div className="text-center space-y-4">
@@ -16,9 +15,7 @@ export const HomeScreen = ({ onScanPress }: HomeScreenProps) => {
             <Scan className="w-10 h-10 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Food Facts
-            </h1>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">RR Food Scanner</h1>
             <h2 className="text-3xl font-bold text-foreground">Scanner</h2>
             <p className="text-muted-foreground mt-2">
               Discover nutrition facts by scanning product barcodes
@@ -37,12 +34,7 @@ export const HomeScreen = ({ onScanPress }: HomeScreenProps) => {
               </p>
             </div>
             
-            <Button 
-              variant="scanner" 
-              size="xl" 
-              className="w-full"
-              onClick={onScanPress}
-            >
+            <Button variant="scanner" size="xl" className="w-full" onClick={onScanPress}>
               <Scan className="w-5 h-5" />
               Scan Barcode
             </Button>
@@ -55,6 +47,5 @@ export const HomeScreen = ({ onScanPress }: HomeScreenProps) => {
           <p className="mt-1">Free and open database of food products</p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
