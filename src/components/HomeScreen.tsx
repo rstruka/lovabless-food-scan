@@ -15,7 +15,7 @@ export const HomeScreen = ({
             <Scan className="w-10 h-10 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">RR Food Scanner</h1>
+            <h1 className="text-3xl font-bold text-primary">RR Food Scanner</h1>
             <h2 className="text-3xl font-bold text-foreground">Scanner</h2>
             <p className="text-muted-foreground mt-2">
               Discover nutrition facts by scanning product barcodes
