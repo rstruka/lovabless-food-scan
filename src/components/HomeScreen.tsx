@@ -1,0 +1,60 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Camera, Scan } from "lucide-react";
+
+interface HomeScreenProps {
+  onScanPress: () => void;
+}
+
+export const HomeScreen = ({ onScanPress }: HomeScreenProps) => {
+  return (
+    <div className="safe-area min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="w-full max-w-sm space-y-8">
+        {/* App Title */}
+        <div className="text-center space-y-4">
+          <div className="mx-auto w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center shadow-[var(--shadow-soft)]">
+            <Scan className="w-10 h-10 text-primary-foreground" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+              Food Facts
+            </h1>
+            <h2 className="text-3xl font-bold text-foreground">Scanner</h2>
+            <p className="text-muted-foreground mt-2">
+              Discover nutrition facts by scanning product barcodes
+            </p>
+          </div>
+        </div>
+
+        {/* Scan Button */}
+        <Card className="p-6 bg-[var(--gradient-card)] border-0 shadow-[var(--shadow-elevated)]">
+          <div className="space-y-4">
+            <div className="text-center">
+              <Camera className="w-8 h-8 mx-auto text-primary mb-2" />
+              <h3 className="font-semibold text-lg">Ready to scan</h3>
+              <p className="text-sm text-muted-foreground">
+                Point your camera at any product barcode
+              </p>
+            </div>
+            
+            <Button 
+              variant="scanner" 
+              size="xl" 
+              className="w-full"
+              onClick={onScanPress}
+            >
+              <Scan className="w-5 h-5" />
+              Scan Barcode
+            </Button>
+          </div>
+        </Card>
+
+        {/* Info */}
+        <div className="text-center text-sm text-muted-foreground">
+          <p>Powered by Open Food Facts</p>
+          <p className="mt-1">Free and open database of food products</p>
+        </div>
+      </div>
+    </div>
+  );
+};
