@@ -18,7 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        scanner: "bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:shadow-[var(--shadow-button)] transform hover:scale-105 transition-all duration-300 font-semibold",
+        scanner: "bg-primary text-primary-foreground hover:shadow-[var(--shadow-button)] transform hover:scale-105 transition-all duration-300 font-semibold",
         result: "bg-accent text-accent-foreground hover:bg-accent/90 border border-accent/20",
       },
       size: {
