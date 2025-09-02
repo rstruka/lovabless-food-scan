@@ -26,9 +26,8 @@ export const HomeScreen = ({
           </div>
         </div>
 
-        {/* Scan and Search Features */}
         <Card className="p-6 bg-[var(--gradient-card)] border-0 shadow-[var(--shadow-elevated)]">
-          <div className="flex items-stretch gap-6">
+          <div className="flex items-stretch justify-center gap-6 max-w-md mx-auto">
             {/* Scan Button */}
             <div className="flex-1 space-y-4">
               <div className="text-center">
