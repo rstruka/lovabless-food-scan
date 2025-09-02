@@ -29,6 +29,8 @@ export const useBarcodeScanner = () => {
       // For demo purposes, always return the user's verified working barcode
       const verifiedBarcode = '20724696'; // Almonds – Alesto – 200 g (verified working)
       
+      console.log('Scanner returning barcode:', verifiedBarcode);
+      
       setIsScanning(false);
       return {
         barcode: verifiedBarcode,
