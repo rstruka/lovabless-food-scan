@@ -26,39 +26,43 @@ export const HomeScreen = ({
           </div>
         </div>
 
-        {/* Scan Button */}
+        {/* Scan and Search Features */}
         <Card className="p-6 bg-[var(--gradient-card)] border-0 shadow-[var(--shadow-elevated)]">
-          <div className="space-y-4">
-            <div className="text-center">
-              <Camera className="w-8 h-8 mx-auto text-primary mb-2" />
-              <h3 className="font-semibold text-lg">Ready to scan</h3>
-              <p className="text-sm text-muted-foreground">
-                Point your camera at any product barcode
-              </p>
+          <div className="flex items-stretch gap-6">
+            {/* Scan Button */}
+            <div className="flex-1 space-y-4">
+              <div className="text-center">
+                <Camera className="w-8 h-8 mx-auto text-primary mb-2" />
+                <h3 className="font-semibold text-lg">Ready to scan</h3>
+                <p className="text-sm text-muted-foreground">
+                  Point your camera at any product barcode
+                </p>
+              </div>
+              
+              <Button variant="scanner" size="xl" className="w-full" onClick={onScanPress}>
+                <Scan className="w-5 h-5" />
+                Scan Barcode
+              </Button>
             </div>
-            
-            <Button variant="scanner" size="xl" className="w-full" onClick={onScanPress}>
-              <Scan className="w-5 h-5" />
-              Scan Barcode
-            </Button>
-          </div>
-        </Card>
 
-        {/* Search Products Button */}
-        <Card className="p-6 bg-[var(--gradient-card)] border-0 shadow-[var(--shadow-elevated)]">
-          <div className="space-y-4">
-            <div className="text-center">
-              <Search className="w-8 h-8 mx-auto text-primary mb-2" />
-              <h3 className="font-semibold text-lg">Search Products</h3>
-              <p className="text-sm text-muted-foreground">
-                Find products by ingredients and see where to buy them
-              </p>
+            {/* Vertical Separator */}
+            <div className="w-px bg-border"></div>
+
+            {/* Search Products Button */}
+            <div className="flex-1 space-y-4">
+              <div className="text-center">
+                <Search className="w-8 h-8 mx-auto text-primary mb-2" />
+                <h3 className="font-semibold text-lg">Search Products</h3>
+                <p className="text-sm text-muted-foreground">
+                  Find products by ingredients and see where to buy them
+                </p>
+              </div>
+              
+              <Button variant="secondary" size="xl" className="w-full" onClick={onSearchPress}>
+                <Search className="w-5 h-5" />
+                Search Products
+              </Button>
             </div>
-            
-            <Button variant="secondary" size="xl" className="w-full" onClick={onSearchPress}>
-              <Search className="w-5 h-5" />
-              Search Products
-            </Button>
           </div>
         </Card>
 
