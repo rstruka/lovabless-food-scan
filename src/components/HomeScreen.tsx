@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Camera, Scan } from "lucide-react";
+import { Camera, Scan, Search } from "lucide-react";
+
 interface HomeScreenProps {
   onScanPress: () => void;
+  onSearchPress: () => void;
 }
 export const HomeScreen = ({
-  onScanPress
+  onScanPress,
+  onSearchPress
 }: HomeScreenProps) => {
   return <div className="safe-area min-h-screen flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-8">
@@ -37,6 +40,24 @@ export const HomeScreen = ({
             <Button variant="scanner" size="xl" className="w-full" onClick={onScanPress}>
               <Scan className="w-5 h-5" />
               Scan Barcode
+            </Button>
+          </div>
+        </Card>
+
+        {/* Search Products Button */}
+        <Card className="p-6 bg-[var(--gradient-card)] border-0 shadow-[var(--shadow-elevated)]">
+          <div className="space-y-4">
+            <div className="text-center">
+              <Search className="w-8 h-8 mx-auto text-primary mb-2" />
+              <h3 className="font-semibold text-lg">Search Products</h3>
+              <p className="text-sm text-muted-foreground">
+                Find products by ingredients and see where to buy them
+              </p>
+            </div>
+            
+            <Button variant="secondary" size="xl" className="w-full" onClick={onSearchPress}>
+              <Search className="w-5 h-5" />
+              Search Products
             </Button>
           </div>
         </Card>

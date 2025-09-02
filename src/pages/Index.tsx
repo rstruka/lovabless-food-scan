@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { HomeScreen } from "@/components/HomeScreen";
 import { ScannerScreen } from "@/components/ScannerScreen";
 import { ResultScreen } from "@/components/ResultScreen";
+import { SearchScreen } from "@/components/SearchScreen";
 import { useOpenFoodFacts } from "@/hooks/useOpenFoodFacts";
 import { useToast } from "@/hooks/use-toast";
 
-type Screen = 'home' | 'scanner' | 'result';
+type Screen = 'home' | 'scanner' | 'result' | 'search';
 
 const Index = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
@@ -23,6 +24,10 @@ const Index = () => {
 
   const handleScanPress = () => {
     setCurrentScreen('scanner');
+  };
+
+  const handleSearchPress = () => {
+    setCurrentScreen('search');
   };
 
   const handleBarcodeScanned = async (barcode: string) => {
@@ -62,7 +67,7 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       {currentScreen === 'home' && (
-        <HomeScreen onScanPress={handleScanPress} />
+        <HomeScreen onScanPress={handleScanPress} onSearchPress={handleSearchPress} />
       )}
       
       {currentScreen === 'scanner' && (
@@ -70,6 +75,10 @@ const Index = () => {
           onBack={handleBack}
           onBarcodeScanned={handleBarcodeScanned}
         />
+      )}
+      
+      {currentScreen === 'search' && (
+        <SearchScreen onBack={handleBack} />
       )}
       
       {currentScreen === 'result' && (
